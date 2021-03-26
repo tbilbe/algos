@@ -1,0 +1,18 @@
+function swap(arr, id1, id2) {
+    [arr[id1], arr[id2]] = [arr[id2], arr[id1]]
+}
+
+function selSort(arr) {
+    for (let i = 0; i< arr.length; i++) {
+        let smallest = i;
+        for (let j=i+1;j<arr.length; j++) {
+            if(arr[j] < arr[smallest]) {
+                smallest = j;
+            }
+        }
+        if (i !== smallest) swap(arr, i, smallest);
+    }
+    return arr;
+}
+
+console.log(selSort([3,6,4,8,1,2]))
